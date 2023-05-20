@@ -20,7 +20,7 @@ const gameBoard = (() => {
       board[i].push(cell.getValue());
     }
   }
-  console.log(board);
+  console.table(board);
 })();
 
 const generatePlayer = (name, symbol) => {
