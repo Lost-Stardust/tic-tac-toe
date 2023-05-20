@@ -1,3 +1,13 @@
+let cell = (() => {
+  let value = 0;
+
+  const addValue = (x) => (value = x);
+  const getValue = () => value;
+
+  return { getValue, addValue };
+})();
+console.log(cell.getValue());
+
 let gameBoard = (() => {
   const board = [];
 
@@ -7,7 +17,7 @@ let gameBoard = (() => {
   for (i = 0; i < rows; i++) {
     board[i] = [];
     for (j = 0; j < columns; j++) {
-      board[i].push("0");
+      board[i].push(cell.getValue());
     }
   }
   console.log(board);
