@@ -1,4 +1,4 @@
-let cell = (() => {
+const cell = (() => {
   let value = 0;
 
   const addValue = (x) => (value = x);
@@ -8,7 +8,7 @@ let cell = (() => {
 })();
 console.log(cell.getValue());
 
-let gameBoard = (() => {
+const gameBoard = (() => {
   const board = [];
 
   const rows = 3;
@@ -22,3 +22,9 @@ let gameBoard = (() => {
   }
   console.log(board);
 })();
+
+const generatePlayer = (name, symbol) => {
+  return { name, symbol };
+};
+const player1 = generatePlayer("Miyamoto Musashi", "$");
+console.log(player1.name, player1.symbol);
