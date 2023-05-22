@@ -1,3 +1,28 @@
+html {
+  height: 100%;
+}
+
 body {
   background-color: black;
+  box-sizing: border-box;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.board {
+  border: solid 2px white;
+  width: 570px;
+  height: 570px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.cellBtn {
+  background-color: black;
+  border: solid 1px white;
 }
