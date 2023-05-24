@@ -19,43 +19,5 @@ body {
 
 .board > button {
   background-color: black;
-}
-.btn1 {
   border: solid 1px white;
-  border-left: none;
-  border-top: none;
-}
-.btn4 {
-  border: solid 1px white;
-  border-left: none;
-}
-.btn7 {
-  border: solid 1px white;
-  border-left: none;
-  border-bottom: none;
-}
-.btn3 {
-  border: solid 1px white;
-  border-top: none;
-  border-right: none;
-}
-.btn6 {
-  border: solid 1px white;
-  border-right: none;
-}
-.btn9 {
-  border: solid 1px white;
-  border-right: none;
-  border-bottom: none;
-}
-.btn2 {
-  border: solid 1px white;
-  border-top: none;
-}
-.btn5 {
-  border: solid 1px white;
-}
-.btn8 {
-  border: solid 1px white;
-  border-bottom: none;
 }
