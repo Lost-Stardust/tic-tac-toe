@@ -51,6 +51,7 @@ body {
   margin-top: 0;
   cursor: pointer;
   float: left;
+  font-size: 40px;
 }
 
 .row {
