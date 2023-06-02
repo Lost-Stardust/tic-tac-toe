@@ -55,16 +55,20 @@ const gameController = (() => {
   console.log(cells);
   cells.forEach((cell) => {
     console.log(cell);
-    cell.addEventListener("click", (e) => {
-      if (P1.status == true) {
-        console.log(e.target);
-        e.target.textContent = P1.symbol;
-        _turn();
-      } else if (P2.status == true) {
-        e.target.textContent = P2.symbol;
-        _turn();
-      }
-    });
+    cell.addEventListener(
+      "click",
+      (e) => {
+        if (P1.status == true) {
+          console.log(e.target);
+          e.target.textContent = P1.symbol;
+          _turn();
+        } else if (P2.status == true) {
+          e.target.textContent = P2.symbol;
+          _turn();
+        }
+      },
+      { once: true } // makes each cell clickable only once.
+    );
   });
 })();
 
