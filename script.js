@@ -53,6 +53,8 @@ const gameController = (() => {
 
   const cells = document.querySelectorAll(".column");
   console.log(cells);
+
+  // Add event listeners to each cell based on player status
   cells.forEach((cell) => {
     console.log(cell);
     cell.addEventListener(
@@ -70,6 +72,19 @@ const gameController = (() => {
       { once: true } // makes each cell clickable only once.
     );
   });
+
+  // set unique data attributes on each cell button
+  // that correspond with the index of a 2d array
+
+  cells[0].setAttribute("data-index", "[0][0]");
+  cells[1].setAttribute("data-index", "[0][1]");
+  cells[2].setAttribute("data-index", "[0][2]");
+  cells[3].setAttribute("data-index", "[1][0]");
+  cells[4].setAttribute("data-index", "[1][1]");
+  cells[5].setAttribute("data-index", "[1][2]");
+  cells[6].setAttribute("data-index", "[2][0]");
+  cells[7].setAttribute("data-index", "[2][1]");
+  cells[8].setAttribute("data-index", "[2][2]");
 })();
 
 // const btn = document.querySelector("#change");
