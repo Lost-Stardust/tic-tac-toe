@@ -75,7 +75,6 @@ const gameController = (() => {
 
   // set unique data attributes on each cell button
   // that correspond with the index of a 2d array
-
   cells[0].setAttribute("data-index", "[0][0]");
   cells[1].setAttribute("data-index", "[0][1]");
   cells[2].setAttribute("data-index", "[0][2]");
@@ -85,6 +84,17 @@ const gameController = (() => {
   cells[6].setAttribute("data-index", "[2][0]");
   cells[7].setAttribute("data-index", "[2][1]");
   cells[8].setAttribute("data-index", "[2][2]");
+
+  // Create the 2d array
+  const board = [];
+
+  for (i = 0; i < 3; i++) {
+    board[i] = [];
+    for (j = 0; j < 3; j++) {
+      board[i].push(0);
+    }
+  }
+  console.table(board);
 })();
 
 // const btn = document.querySelector("#change");
