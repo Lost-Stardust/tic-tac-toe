@@ -90,7 +90,11 @@ const gameController = (() => {
   cells[6].setAttribute("data-index", "[2][0]");
   cells[7].setAttribute("data-index", "[2][1]");
   cells[8].setAttribute("data-index", "[2][2]");
+})();
 
+// module that will validate the winning patterns of tic tac toe
+// uses dataIndex to match the cells with 2d array
+const validate = (() => {
   // Create the 2d array
   const board = [];
 
@@ -101,11 +105,7 @@ const gameController = (() => {
     }
   }
   console.table(board);
-})();
 
-// module that will validate the winning patterns of tic tac toe
-// uses dataIndex to match the cells with 2d array
-const validate = (() => {
   const cells = document.querySelectorAll(".column");
 
   for (let cell of cells) {
