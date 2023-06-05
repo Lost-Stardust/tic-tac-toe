@@ -12,6 +12,13 @@ const playerFactory = (name, symbol, status) => {
   return { name, symbol, status };
 };
 
+const players = (() => {
+  const P1 = playerFactory("Joestar", "X", true);
+  const P2 = playerFactory("Bitch", "O");
+
+  return { P1, P2 };
+})();
+
 const gameBoard = (() => {
   function print() {
     for (let i = 0; i < 3; i++) {
@@ -38,16 +45,16 @@ const gameController = (() => {
   function makePlayer() {}
 
   // Temporary player creations
-  const P1 = playerFactory("Joestar", "X", true);
-  const P2 = playerFactory("Bitch", "O");
+  // const P1 = playerFactory("Joestar", "X", true);
+  // const P2 = playerFactory("Bitch", "O");
 
   function _turn() {
-    if (P1.status == true) {
-      P1.status = false;
-      P2.status = true;
-    } else if (P2.status == true) {
-      P2.status = false;
-      P1.status = true;
+    if (players.P1.status == true) {
+      players.P1.status = false;
+      players.P2.status = true;
+    } else if (players.P2.status == true) {
+      players.P2.status = false;
+      players.P1.status = true;
     }
   }
 
@@ -60,12 +67,11 @@ const gameController = (() => {
     cell.addEventListener(
       "click",
       (e) => {
-        if (P1.status == true) {
-          console.log(e.target);
-          e.target.textContent = P1.symbol;
+        if (players.P1.status == true) {
+          e.target.textContent = players.P1.symbol;
           _turn();
-        } else if (P2.status == true) {
-          e.target.textContent = P2.symbol;
+        } else if (players.P2.status == true) {
+          e.target.textContent = players.P2.symbol;
           _turn();
         }
       },
