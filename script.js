@@ -103,6 +103,29 @@ const gameController = (() => {
   console.table(board);
 })();
 
+// module that will validate the winning patterns of tic tac toe
+// uses dataIndex to match the cells with 2d array
+const validate = (() => {
+  const cells = document.querySelectorAll(".column");
+
+  for (let cell of cells) {
+    let dataIndex;
+
+    cell.addEventListener(
+      "click",
+      (e) => {
+        dataIndex = e.target.getAttribute("data-index");
+        if (players.P1.status == false) {
+          console.log(dataIndex, players.P1.symbol);
+        } else if (players.P2.status == false) {
+          console.log(dataIndex, players.P2.symbol);
+        }
+      },
+      { once: true }
+    );
+  }
+})();
+
 // const btn = document.querySelector("#change");
 // btn.addEventListener("click", () => {
 //   page.change();
