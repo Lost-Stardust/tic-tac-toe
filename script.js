@@ -81,15 +81,32 @@ const gameController = (() => {
 
   // set unique data attributes on each cell button
   // that correspond with the index of a 2d array
-  cells[0].setAttribute("data-index", "[0][0]");
-  cells[1].setAttribute("data-index", "[0][1]");
-  cells[2].setAttribute("data-index", "[0][2]");
-  cells[3].setAttribute("data-index", "[1][0]");
-  cells[4].setAttribute("data-index", "[1][1]");
-  cells[5].setAttribute("data-index", "[1][2]");
-  cells[6].setAttribute("data-index", "[2][0]");
-  cells[7].setAttribute("data-index", "[2][1]");
-  cells[8].setAttribute("data-index", "[2][2]");
+  cells[0].setAttribute("data-index1", 0);
+  cells[0].setAttribute("data-index2", 0);
+
+  cells[1].setAttribute("data-index1", 0);
+  cells[1].setAttribute("data-index2", 1);
+
+  cells[2].setAttribute("data-index1", 0);
+  cells[2].setAttribute("data-index2", 2);
+
+  cells[3].setAttribute("data-index1", 1);
+  cells[3].setAttribute("data-index2", 0);
+
+  cells[4].setAttribute("data-index1", 1);
+  cells[4].setAttribute("data-index2", 1);
+
+  cells[5].setAttribute("data-index1", 1);
+  cells[5].setAttribute("data-index2", 2);
+
+  cells[6].setAttribute("data-index1", 2);
+  cells[6].setAttribute("data-index2", 0);
+
+  cells[7].setAttribute("data-index1", 2);
+  cells[7].setAttribute("data-index2", 1);
+
+  cells[8].setAttribute("data-index1", 2);
+  cells[8].setAttribute("data-index2", 2);
 })();
 
 // module that will validate the winning patterns of tic tac toe
@@ -108,17 +125,37 @@ const validate = (() => {
 
   const cells = document.querySelectorAll(".column");
 
-  for (let cell of cells) {
-    let dataIndex;
+  let dataIndex1;
+  let dataIndex2;
 
+  const data = {
+    index1: null,
+    index2: null,
+    symbol: null,
+  };
+
+  for (let cell of cells) {
     cell.addEventListener(
       "click",
       (e) => {
-        dataIndex = e.target.getAttribute("data-index");
+        dataIndex1 = e.target.getAttribute("data-index1");
+        dataIndex2 = e.target.getAttribute("data-index2");
         if (players.P1.status == false) {
-          console.log(dataIndex, players.P1.symbol);
+          data.index1 = dataIndex1;
+          data.index2 = dataIndex2;
+          data.symbol = players.P1.symbol;
+          console.log({ data });
+
+          board[data.index1][data.index2] = data.symbol;
+          console.table(board);
         } else if (players.P2.status == false) {
-          console.log(dataIndex, players.P2.symbol);
+          data.index1 = dataIndex1;
+          data.index2 = dataIndex2;
+          data.symbol = players.P2.symbol;
+          console.log({ data });
+
+          board[data.index1][data.index2] = data.symbol;
+          console.table(board);
         }
       },
       { once: true }
