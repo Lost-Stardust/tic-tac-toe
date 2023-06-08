@@ -147,7 +147,7 @@ const validate = (() => {
           console.log({ data });
 
           board[data.index1][data.index2] = data.symbol;
-          console.table(board);
+          console.log(board);
         } else if (players.P2.status == false) {
           data.index1 = dataIndex1;
           data.index2 = dataIndex2;
@@ -155,12 +155,65 @@ const validate = (() => {
           console.log({ data });
 
           board[data.index1][data.index2] = data.symbol;
-          console.table(board);
+          console.log(board);
         }
       },
       { once: true }
     );
   }
+
+  // winning patterns
+
+  function runPatterns() {
+    let currPlayer;
+    if (players.P1.status == false) {
+      currPlayer = players.P1.name;
+    } else if (players.P2.status == false) {
+      currPlayer = players.P2.name;
+    }
+
+    // patterns for 'X'
+    if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") {
+      console.log(`${currPlayer} won!`);
+    }
+
+    // patterns for 'O'
+    if (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O") {
+      console.log(`${currPlayer} won!`);
+    } else if (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O") {
+      console.log(`${currPlayer} won!`);
+    }
+  }
+
+  cells.forEach((cell) => {
+    cell.addEventListener("click", runPatterns, { once: true });
+  });
 })();
 
 // const btn = document.querySelector("#change");
