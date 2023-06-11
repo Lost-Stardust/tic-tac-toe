@@ -63,7 +63,6 @@ const gameController = (() => {
 
   // Add event listeners to each cell based on player status
   cells.forEach((cell) => {
-    console.log(cell);
     cell.addEventListener(
       "click",
       (e) => {
@@ -172,42 +171,65 @@ const validate = (() => {
       currPlayer = players.P2.name;
     }
 
+    // variable that will store winners name
+    let winner;
+
     // patterns for 'X'
     if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") {
-      console.log(`${currPlayer} won!`);
+      score = 1;
+      console.log((winner = currPlayer));
     } else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     }
 
     // patterns for 'O'
     if (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
     } else if (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O") {
-      console.log(`${currPlayer} won!`);
+      console.log((winner = currPlayer));
+    }
+
+    // variable that will determine draw if it's value is 9
+    let count = 0;
+
+    // loop with condition that will iterate over 2d array
+    // and check if the board array still contains its default value
+    // if it doesn't then count++
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (board[i].includes(0) == false) {
+          console.log(++count);
+        }
+      }
+    }
+
+    // draw condition. 9 represents the total cells on the board
+    if (count == 9 && winner == undefined) {
+      console.log("draw!");
     }
   }
 
