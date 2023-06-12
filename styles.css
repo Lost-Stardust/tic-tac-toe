@@ -21,6 +21,10 @@ body {
   align-items: center;
 }
 
+.board-container > h2 {
+  margin: 0;
+}
+
 .board {
   width: 540px;
   height: auto;
