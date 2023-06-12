@@ -8,13 +8,13 @@
 //   return { change };
 // })();
 
-const playerFactory = (name, symbol, status) => {
+const createPlayer = (name, symbol, status) => {
   return { name, symbol, status };
 };
 
 const players = (() => {
-  const P1 = playerFactory("Joestar", "X", true);
-  const P2 = playerFactory("Bitch", "O");
+  const P1 = createPlayer("Joestar", "X", true);
+  const P2 = createPlayer("Bitch", "O");
 
   return { P1, P2 };
 })();
@@ -45,8 +45,8 @@ const gameController = (() => {
   function makePlayer() {}
 
   // Temporary player creations
-  // const P1 = playerFactory("Joestar", "X", true);
-  // const P2 = playerFactory("Bitch", "O");
+  // const P1 = createPlayer("Joestar", "X", true);
+  // const P2 = createPlayer("Bitch", "O");
 
   function _turn() {
     if (players.P1.status == true) {
