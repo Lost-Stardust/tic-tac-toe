@@ -83,6 +83,8 @@ const gameController = (() => {
 // module that will validate the winning patterns of tic tac toe
 // uses dataIndex to match the cells with 2d array
 const validate = (() => {
+  const cells = document.querySelectorAll(".column");
+
   // set unique data attributes on each cell button
   // that correspond with the index of a 2d array
   cells[0].setAttribute("data-index1", 0);
@@ -122,8 +124,6 @@ const validate = (() => {
     }
   }
   console.table(board);
-
-  const cells = document.querySelectorAll(".column");
 
   let dataIndex1;
   let dataIndex2;
