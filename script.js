@@ -166,7 +166,7 @@ const validate = (() => {
 
   // winning patterns
 
-  function runPatterns() {
+  function _runPatterns() {
     let currPlayer;
     if (players.P1.status == false) {
       currPlayer = players.P1.name;
@@ -237,7 +237,7 @@ const validate = (() => {
   }
 
   cells.forEach((cell) => {
-    cell.addEventListener("click", runPatterns, { once: true });
+    cell.addEventListener("click", _runPatterns, { once: true });
   });
 })();
 
