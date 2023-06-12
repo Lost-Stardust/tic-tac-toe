@@ -62,6 +62,7 @@ const gameController = (() => {
   console.log(cells);
 
   // Add event listeners to each cell based on player status
+  // event listener will add the player's symbol to the target
   cells.forEach((cell) => {
     cell.addEventListener(
       "click",
