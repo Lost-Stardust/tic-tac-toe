@@ -78,7 +78,11 @@ const gameController = (() => {
       { once: true } // makes each cell clickable only once.
     );
   });
+})();
 
+// module that will validate the winning patterns of tic tac toe
+// uses dataIndex to match the cells with 2d array
+const validate = (() => {
   // set unique data attributes on each cell button
   // that correspond with the index of a 2d array
   cells[0].setAttribute("data-index1", 0);
@@ -107,11 +111,7 @@ const gameController = (() => {
 
   cells[8].setAttribute("data-index1", 2);
   cells[8].setAttribute("data-index2", 2);
-})();
 
-// module that will validate the winning patterns of tic tac toe
-// uses dataIndex to match the cells with 2d array
-const validate = (() => {
   // Create the 2d array
   const board = [];
 
