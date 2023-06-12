@@ -128,6 +128,8 @@ const validate = (() => {
   let dataIndex1;
   let dataIndex2;
 
+  // object that will be used to store the data attributes
+  // and symbol of player that clicked a cell
   const data = {
     index1: null,
     index2: null,
