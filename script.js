@@ -14,7 +14,7 @@ const createPlayer = (name, symbol, status) => {
 
 const players = (() => {
   const P1 = createPlayer("Joestar", "X", true);
-  const P2 = createPlayer("Bitch", "O");
+  const P2 = createPlayer("Bitch", "O", false);
 
   return { P1, P2 };
 })();
@@ -61,17 +61,26 @@ const gameController = (() => {
   const cells = document.querySelectorAll(".column");
   console.log(cells);
 
+  const span = document.querySelector("span");
+  console.log(span);
+
   // Add event listeners to each cell based on player status
   // event listener will add the player's symbol to the target
+  // display the current player's name and color it.
   cells.forEach((cell) => {
     cell.addEventListener(
       "click",
       (e) => {
         if (players.P1.status == true) {
           e.target.textContent = players.P1.symbol;
+          span.textContent = players.P1.name + "'s";
+          span.textContent = players.P2.name + "'s";
+          span.style.color = "blueviolet";
           _turn();
         } else if (players.P2.status == true) {
           e.target.textContent = players.P2.symbol;
+          span.textContent = players.P1.name + "'s";
+          span.style.color = "orange";
           _turn();
         }
       },
