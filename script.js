@@ -63,6 +63,8 @@ const gameController = (() => {
 
   const span = document.querySelector("span");
   console.log(span);
+  span.textContent = players.P1.name + "'s";
+  span.style.color = "#ff206e";
 
   // Add event listeners to each cell based on player status
   // event listener will add the player's symbol to the target
@@ -73,14 +75,15 @@ const gameController = (() => {
       (e) => {
         if (players.P1.status == true) {
           e.target.textContent = players.P1.symbol;
-          span.textContent = players.P1.name + "'s";
+          e.target.style.color = "#ff206e";
           span.textContent = players.P2.name + "'s";
-          span.style.color = "blueviolet";
+          span.style.color = "#fbff12";
           _turn();
         } else if (players.P2.status == true) {
           e.target.textContent = players.P2.symbol;
+          e.target.style.color = "#fbff12";
           span.textContent = players.P1.name + "'s";
-          span.style.color = "orange";
+          span.style.color = "#ff206e";
           _turn();
         }
       },
