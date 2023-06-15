@@ -10,6 +10,7 @@ body {
 
 * {
   color: white;
+  font-family: "Comfortaa", cursive;
 }
 
 .board-container {
@@ -44,6 +45,15 @@ body {
   right: 0;
   bottom: 0;
   z-index: 1;
+}
+
+#play {
+  background: #1c2225;
+  border: #727472 solid 2px;
+  border-radius: 5px;
+  width: 340px;
+  height: 200px;
+  font-size: 150px;
 }
 
 .column {
