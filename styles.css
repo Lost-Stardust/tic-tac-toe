@@ -57,7 +57,7 @@ h1 {
 
 #play {
   background: #1c2225;
-  border: #727472 solid 2px;
+  border: none;
   border-radius: 5px;
   width: 340px;
   height: 200px;
