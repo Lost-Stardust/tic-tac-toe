@@ -57,21 +57,21 @@ h1 {
 }
 
 .tic {
-  text-shadow: #ff206e -2px 5px;
+  text-shadow: #ff206e -2px 3px;
 }
 
 .tac {
-  text-shadow: #fbff12 -2px 5px;
+  text-shadow: #fbff12 -2px 3px;
 }
 
 .toe {
-  text-shadow: #41ead4 -2px 5px;
+  text-shadow: #41ead4 -2px 3px;
 }
 
 #play {
   background: #1c2225;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   width: 340px;
   height: 200px;
   font-size: 100px;
