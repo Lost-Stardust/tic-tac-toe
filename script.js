@@ -61,7 +61,7 @@ const gameController = (() => {
   const cells = document.querySelectorAll(".column");
   console.log(cells);
 
-  const span = document.querySelector("span");
+  const span = document.querySelector(".turn-name");
   console.log(span);
   span.textContent = players.P1.name + "'s";
   span.style.color = "#ff206e";
