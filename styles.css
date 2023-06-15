@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Moirai+One&display=swap");
 
 body {
   background-color: #1c2225;
@@ -10,7 +11,7 @@ body {
 
 * {
   color: white;
-  font-family: "Comfortaa", cursive;
+  font-family: "Moirai One", cursive;
 }
 
 .board-container {
@@ -62,6 +63,7 @@ h1 {
   width: 340px;
   height: 200px;
   font-size: 100px;
+  font-weight: 600;
 }
 
 .column {
