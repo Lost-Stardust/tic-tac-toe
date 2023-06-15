@@ -56,6 +56,18 @@ h1 {
   font-size: 90px;
 }
 
+.tic {
+  text-shadow: #ff206e -2px 5px;
+}
+
+.tac {
+  text-shadow: #fbff12 -2px 5px;
+}
+
+.toe {
+  text-shadow: #41ead4 -2px 5px;
+}
+
 #play {
   background: #1c2225;
   border: none;
