@@ -244,8 +244,11 @@ const validate = (() => {
 })();
 
 const btn = document.querySelector("#play");
-console.log(btn);
+const returnBtn = document.querySelector("#return");
 btn.addEventListener("click", () => {
   const home = document.querySelector(".home");
   home.style.setProperty("display", "none");
+});
+returnBtn.addEventListener("click", () => {
+  location.reload();
 });
