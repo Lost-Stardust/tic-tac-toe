@@ -78,6 +78,24 @@ h1 {
   font-weight: 600;
 }
 
+.x {
+  transition: text-shadow 500ms linear, color 600ms linear;
+}
+
+.o {
+  transition: text-shadow 500ms linear, color 600ms linear;
+}
+
+#play:hover .x {
+  text-shadow: #41ead4 -3px 5px;
+  color: #e41e63;
+}
+
+#play:hover .o {
+  text-shadow: #41ead4 -3px 5px;
+  color: #fbff12;
+}
+
 .column {
   font-family: "Comfortaa", cursive;
   border: #727472 1px solid;
