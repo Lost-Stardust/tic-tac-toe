@@ -72,10 +72,14 @@ h1 {
   background: #1c2225;
   border: none;
   border-radius: 3px;
-  width: 340px;
-  height: 200px;
+  width: 200px;
+  height: 130px;
   font-size: 100px;
   font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .x {
