@@ -83,11 +83,11 @@ h1 {
 }
 
 .x {
-  transition: text-shadow 500ms linear, color 600ms linear;
+  transition: text-shadow 400ms linear, color 400ms linear;
 }
 
 .o {
-  transition: text-shadow 500ms linear, color 600ms linear;
+  transition: text-shadow 400ms linear, color 400ms linear;
 }
 
 #play:hover .x {
