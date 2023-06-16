@@ -1,13 +1,3 @@
-// const page = (() => {
-//   const home = document.querySelector(".home");
-
-//   function change() {
-//     home.style.setProperty("display", "none");
-//   }
-
-//   return { change };
-// })();
-
 const createPlayer = (name, symbol, status) => {
   return { name, symbol, status };
 };
@@ -34,10 +24,10 @@ const gameBoard = (() => {
       }
     }
   }
+  print();
 
   return { print };
 })();
-gameBoard.print();
 
 const gameController = (() => {
   // Make player function; for later
@@ -253,8 +243,9 @@ const validate = (() => {
   });
 })();
 
-// const btn = document.querySelector("#change");
-// btn.addEventListener("click", () => {
-//   page.change();
-//   gameBoard.print();
-// });
+const btn = document.querySelector("#play");
+console.log(btn);
+btn.addEventListener("click", () => {
+  const home = document.querySelector(".home");
+  home.style.setProperty("display", "none");
+});
