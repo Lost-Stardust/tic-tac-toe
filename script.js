@@ -80,6 +80,11 @@ const gameController = (() => {
       { once: true } // makes each cell clickable only once.
     );
   });
+
+  const playAgain = document.querySelector(".playAgain");
+  playAgain.addEventListener("click", () => {
+    location.reload();
+  });
 })();
 
 // module that will validate the winning patterns of tic tac toe
@@ -375,5 +380,6 @@ btn.addEventListener("click", () => {
   home.style.setProperty("display", "none");
 });
 returnBtn.addEventListener("click", () => {
-  location.reload();
+  const home = document.querySelector(".home");
+  home.style.setProperty("display", "grid");
 });
