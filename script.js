@@ -181,7 +181,6 @@ const validate = (() => {
 
     // patterns for 'X'
     if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") {
-      score = 1;
       console.log((winner = currPlayer));
     } else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X") {
       console.log((winner = currPlayer));
