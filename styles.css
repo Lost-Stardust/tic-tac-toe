@@ -165,6 +165,10 @@ h1 {
   background: #1c2225;
 }
 
+#gameover > * {
+  font-family: "Comfortaa", cursive;
+}
+
 #overlay {
   position: fixed;
   opacity: 1;
