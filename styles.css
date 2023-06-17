@@ -56,8 +56,6 @@ body {
   justify-items: center;
   align-items: center;
   grid-auto-rows: 0.4fr 0.3fr;
-
-  display: none;
 }
 
 h1 {
