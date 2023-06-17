@@ -208,3 +208,7 @@ h1 {
 #gameover > button:hover {
   box-shadow: #e41e63 -5px 5px;
 }
+
+button {
+  cursor: pointer;
+}
