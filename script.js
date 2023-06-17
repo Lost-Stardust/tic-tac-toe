@@ -182,20 +182,44 @@ const validate = (() => {
     // patterns for 'X'
     if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") {
       console.log((winner = currPlayer));
+      cells[0].style.border = "#41ead4 solid 1px";
+      cells[3].style.border = "#41ead4 solid 1px";
+      cells[6].style.border = "#41ead4 solid 1px";
     } else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X") {
       console.log((winner = currPlayer));
+      cells[1].style.border = "#41ead4 solid 1px";
+      cells[4].style.border = "#41ead4 solid 1px";
+      cells[7].style.border = "#41ead4 solid 1px";
     } else if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X") {
       console.log((winner = currPlayer));
+      cells[2].style.border = "#41ead4 solid 1px";
+      cells[5].style.border = "#41ead4 solid 1px";
+      cells[8].style.border = "#41ead4 solid 1px";
     } else if (board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") {
       console.log((winner = currPlayer));
+      cells[0].style.border = "#41ead4 solid 1px";
+      cells[1].style.border = "#41ead4 solid 1px";
+      cells[2].style.border = "#41ead4 solid 1px";
     } else if (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X") {
       console.log((winner = currPlayer));
+      cells[3].style.border = "#41ead4 solid 1px";
+      cells[4].style.border = "#41ead4 solid 1px";
+      cells[5].style.border = "#41ead4 solid 1px";
     } else if (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X") {
       console.log((winner = currPlayer));
+      cells[6].style.border = "#41ead4 solid 1px";
+      cells[7].style.border = "#41ead4 solid 1px";
+      cells[8].style.border = "#41ead4 solid 1px";
     } else if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") {
       console.log((winner = currPlayer));
+      cells[0].style.border = "#41ead4 solid 1px";
+      cells[4].style.border = "#41ead4 solid 1px";
+      cells[8].style.border = "#41ead4 solid 1px";
     } else if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") {
       console.log((winner = currPlayer));
+      cells[2].style.border = "#41ead4 solid 1px";
+      cells[4].style.border = "#41ead4 solid 1px";
+      cells[6].style.border = "#41ead4 solid 1px";
     }
 
     // patterns for 'O'
