@@ -127,6 +127,10 @@ h1 {
   transition: color 350ms linear;
 }
 
+.column:hover {
+  border: white solid 1px;
+}
+
 .row {
   display: block;
   float: left;
