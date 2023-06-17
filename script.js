@@ -225,20 +225,44 @@ const validate = (() => {
     // patterns for 'O'
     if (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O") {
       console.log((winner = currPlayer));
+      cells[0].style.border = "#41ead4 solid 1px";
+      cells[3].style.border = "#41ead4 solid 1px";
+      cells[6].style.border = "#41ead4 solid 1px";
     } else if (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O") {
       console.log((winner = currPlayer));
+      cells[1].style.border = "#41ead4 solid 1px";
+      cells[4].style.border = "#41ead4 solid 1px";
+      cells[7].style.border = "#41ead4 solid 1px";
     } else if (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O") {
       console.log((winner = currPlayer));
+      cells[2].style.border = "#41ead4 solid 1px";
+      cells[5].style.border = "#41ead4 solid 1px";
+      cells[8].style.border = "#41ead4 solid 1px";
     } else if (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O") {
       console.log((winner = currPlayer));
+      cells[0].style.border = "#41ead4 solid 1px";
+      cells[1].style.border = "#41ead4 solid 1px";
+      cells[2].style.border = "#41ead4 solid 1px";
     } else if (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O") {
       console.log((winner = currPlayer));
+      cells[3].style.border = "#41ead4 solid 1px";
+      cells[4].style.border = "#41ead4 solid 1px";
+      cells[5].style.border = "#41ead4 solid 1px";
     } else if (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O") {
       console.log((winner = currPlayer));
+      cells[6].style.border = "#41ead4 solid 1px";
+      cells[7].style.border = "#41ead4 solid 1px";
+      cells[8].style.border = "#41ead4 solid 1px";
     } else if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O") {
       console.log((winner = currPlayer));
+      cells[0].style.border = "#41ead4 solid 1px";
+      cells[4].style.border = "#41ead4 solid 1px";
+      cells[8].style.border = "#41ead4 solid 1px";
     } else if (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O") {
       console.log((winner = currPlayer));
+      cells[2].style.border = "#41ead4 solid 1px";
+      cells[4].style.border = "#41ead4 solid 1px";
+      cells[6].style.border = "#41ead4 solid 1px";
     }
 
     // variable that will determine draw if it's value is 9
