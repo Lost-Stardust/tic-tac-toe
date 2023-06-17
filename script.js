@@ -355,6 +355,10 @@ const validate = (() => {
       console.log("draw!");
       for (cell of cells) {
         cell.style.color = "#41ead4";
+        const h2 = document.querySelector(".modalh2");
+        h2.textContent = "Its a tie!";
+        gameOver.classList.add("active");
+        overlay.classList.add("active");
       }
     }
   }
