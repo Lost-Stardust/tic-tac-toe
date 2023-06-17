@@ -192,3 +192,16 @@ h1 {
 #gameover.active {
   transform: scale(1);
 }
+
+#gameover > button {
+  background-color: #1c2225;
+  border-radius: 4px;
+  width: 180px;
+  height: 35px;
+  border: #727472 solid 1px;
+  transition: 300ms linear;
+}
+
+#gameover > button:hover {
+  box-shadow: #e41e63 -5px 5px;
+}
