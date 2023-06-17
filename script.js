@@ -282,6 +282,9 @@ const validate = (() => {
     // draw condition. 9 represents the total cells on the board
     if (count == 9 && winner == undefined) {
       console.log("draw!");
+      for (cell of cells) {
+        cell.style.border = "#41ead4 solid 1px";
+      }
     }
   }
 
