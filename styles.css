@@ -166,6 +166,7 @@ h1 {
 
   display: grid;
   justify-items: center;
+  align-items: center;
 }
 
 #gameover > * {
@@ -200,6 +201,8 @@ h1 {
   height: 35px;
   border: #727472 solid 1px;
   transition: 300ms linear;
+
+  align-self: flex-start;
 }
 
 #gameover > button:hover {
