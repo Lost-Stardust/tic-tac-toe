@@ -225,3 +225,21 @@ form div {
   flex-direction: column;
   gap: 5px;
 }
+
+input {
+  background: #1c2225;
+  outline: none;
+  border: solid #727472 1px;
+  border-radius: 5px;
+  padding: 6px;
+
+  transition: border 300ms ease-in;
+}
+
+input#p1:focus {
+  border: solid #e41e63 1px;
+}
+
+input#p2:focus {
+  border: solid #fbff12 1px;
+}
