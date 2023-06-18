@@ -80,11 +80,6 @@ const gameController = (() => {
       { once: true } // makes each cell clickable only once.
     );
   });
-
-  const playAgain = document.querySelector(".playAgain");
-  playAgain.addEventListener("click", () => {
-    location.reload();
-  });
 })();
 
 // module that will validate the winning patterns of tic tac toe
