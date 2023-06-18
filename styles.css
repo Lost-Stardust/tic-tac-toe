@@ -210,3 +210,18 @@ h1 {
 button {
   cursor: pointer;
 }
+
+form div * {
+  font-family: "Comfortaa", cursive;
+}
+
+form {
+  display: flex;
+  gap: 100px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
