@@ -3,10 +3,22 @@ const createPlayer = (name, symbol, status) => {
 };
 
 const players = (() => {
-  const P1 = createPlayer("Joestar", "X", true);
-  const P2 = createPlayer("Bitch", "O", false);
+  const P1 = createPlayer("player one", "X", true);
+  const P2 = createPlayer("player two", "O", false);
 
-  return { P1, P2 };
+  function create() {
+    let name1 = document.querySelector("#p1").value;
+    let name2 = document.querySelector("#p2").value;
+    if (name1 != "" && name2 != "") {
+      P1.name = name1;
+      P2.name = name2;
+    } else if (name1 == "" && name2 == "") {
+      P1.name = "Player one";
+      P2.name = "Player two";
+    }
+  }
+
+  return { P1, P2, create };
 })();
 
 const gameBoard = (() => {
@@ -30,10 +42,6 @@ const gameBoard = (() => {
 })();
 
 const gameController = (() => {
-  // Make player function; for later
-  // it will take input from user for names
-  function makePlayer() {}
-
   // Temporary player creations
   // const P1 = createPlayer("Joestar", "X", true);
   // const P2 = createPlayer("Bitch", "O");
@@ -373,6 +381,8 @@ const returnBtn = document.querySelector("#return");
 btn.addEventListener("click", () => {
   const home = document.querySelector(".home");
   home.style.setProperty("display", "none");
+
+  players.create();
 });
 returnBtn.addEventListener("click", () => {
   const home = document.querySelector(".home");
