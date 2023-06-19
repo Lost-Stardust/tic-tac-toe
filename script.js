@@ -68,25 +68,27 @@ const gameController = (() => {
   // event listener will add the player's symbol to the target
   // display the current player's name and color it.
   cells.forEach((cell) => {
-    cell.addEventListener(
-      "click",
-      (e) => {
-        if (players.P1.status == true) {
-          e.target.textContent = players.P1.symbol;
-          e.target.style.color = "#ff206e";
-          span.textContent = players.P2.name + "'s";
-          span.style.color = "#fbff12";
-          _turn();
-        } else if (players.P2.status == true) {
-          e.target.textContent = players.P2.symbol;
-          e.target.style.color = "#fbff12";
-          span.textContent = players.P1.name + "'s";
-          span.style.color = "#ff206e";
-          _turn();
-        }
-      },
-      { once: true } // makes each cell clickable only once.
-    );
+    cell.addEventListener("click", (e) => {
+      if (e.target.textContent == "" && players.P1.status == true) {
+        e.target.textContent = players.P1.symbol;
+        e.target.style.color = "#ff206e";
+        span.textContent = players.P2.name + "'s";
+        span.style.color = "#fbff12";
+        _turn();
+      } else {
+        e.target.style.setProperty("pointer-events", "none");
+      }
+
+      if (e.target.textContent == "" && players.P2.status == true) {
+        e.target.textContent = players.P2.symbol;
+        e.target.style.color = "#fbff12";
+        span.textContent = players.P1.name + "'s";
+        span.style.color = "#ff206e";
+        _turn();
+      } else {
+        e.target.style.setProperty("pointer-events", "none");
+      }
+    });
   });
 })();
 
@@ -147,31 +149,27 @@ const validate = (() => {
   };
 
   for (let cell of cells) {
-    cell.addEventListener(
-      "click",
-      (e) => {
-        dataIndex1 = e.target.getAttribute("data-index1");
-        dataIndex2 = e.target.getAttribute("data-index2");
-        if (players.P1.status == false) {
-          data.index1 = dataIndex1;
-          data.index2 = dataIndex2;
-          data.symbol = players.P1.symbol;
-          console.log({ data });
+    cell.addEventListener("click", (e) => {
+      dataIndex1 = e.target.getAttribute("data-index1");
+      dataIndex2 = e.target.getAttribute("data-index2");
+      if (players.P1.status == false) {
+        data.index1 = dataIndex1;
+        data.index2 = dataIndex2;
+        data.symbol = players.P1.symbol;
+        console.log({ data });
 
-          board[data.index1][data.index2] = data.symbol;
-          console.log(board);
-        } else if (players.P2.status == false) {
-          data.index1 = dataIndex1;
-          data.index2 = dataIndex2;
-          data.symbol = players.P2.symbol;
-          console.log({ data });
+        board[data.index1][data.index2] = data.symbol;
+        console.log(board);
+      } else if (players.P2.status == false) {
+        data.index1 = dataIndex1;
+        data.index2 = dataIndex2;
+        data.symbol = players.P2.symbol;
+        console.log({ data });
 
-          board[data.index1][data.index2] = data.symbol;
-          console.log(board);
-        }
-      },
-      { once: true }
-    );
+        board[data.index1][data.index2] = data.symbol;
+        console.log(board);
+      }
+    });
   }
 
   // winning patterns
@@ -372,13 +370,14 @@ const validate = (() => {
   }
 
   cells.forEach((cell) => {
-    cell.addEventListener("click", _runPatterns, { once: true });
+    cell.addEventListener("click", _runPatterns);
   });
 
   const playAgain = document.querySelector(".playAgain");
   playAgain.addEventListener("click", () => {
     for (const cell of cells) {
       cell.textContent = "";
+      cell.style.setProperty("pointer-events", "all");
     }
 
     for (i = 0; i < 3; i++) {
