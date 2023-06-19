@@ -374,6 +374,35 @@ const validate = (() => {
   cells.forEach((cell) => {
     cell.addEventListener("click", _runPatterns, { once: true });
   });
+
+  const playAgain = document.querySelector(".playAgain");
+  playAgain.addEventListener("click", () => {
+    for (const cell of cells) {
+      cell.textContent = "";
+    }
+
+    for (i = 0; i < 3; i++) {
+      board[i] = [];
+      for (j = 0; j < 3; j++) {
+        board[i].push(0);
+      }
+    }
+
+    const gameOver = document.querySelector("#gameover");
+    const overlay = document.querySelector("#overlay");
+
+    gameOver.classList.remove("active");
+    overlay.classList.remove("active");
+
+    console.log(players.P1.status, players.P2.status);
+    players.P1.status = true;
+    players.P2.status = false;
+
+    const span = document.querySelector(".turn-name");
+    console.log(span);
+    span.textContent = players.P1.name + "'s";
+    span.style.color = "#ff206e";
+  });
 })();
 
 const btn = document.querySelector("#play");
